@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title>Layout prototype</title>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #999;
+        font-size: 16px;
+        font-family: courier;
+      }
+      header,nav,section,footer {
+        padding: 1em;
+        background: #eee;
+      }
+      header {
+        margin: 0 0 1em;
+      }
+      /* nav */
+      nav {
+        margin: 1px 0;
+        -webkit-transition: all 300ms;
+      }
+      @media (max-width: 767px) {
+        nav {
+          position: absolute;
+          top: 4em;
+          left: 1em;
+          right: 1em;
+          width: calc(100% - 2em);
+        }
+        nav ul {
+          display: none
+        }
+      }
+      @media (min-width: 768px) {
+        nav {
+          position: absolute;
+          top: 4em;
+          left: 0;
+          right: auto;
+          width: 200px;
+        }
+      }
+
+      /* main content */
+      section {
+        position: relative;
+        background: #ddd;
+        -webkit-transition: all 300ms;
+      }
+      @media (max-width: 767px) {
+        section {
+          left: 0;
+          margin-top: 5em;
+        }
+      }
+      @media (min-width: 768px) {
+        section {
+          left: 220px;
+        }
+      }
+      /* footer */
+      footer {
+        margin: 1em 0 0;
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      header
+    </header>
+
+    <section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac odio sit amet massa cursus iaculis vel at turpis. Nunc sodales nisl dictum, porta tellus ut, porttitor nibh. Aenean semper cursus magna, porta dapibus sem dapibus a. Nulla eu placerat augue. Maecenas eget interdum sapien. Cras tempus augue tortor, sed cursus orci vehicula nec. Proin tempor mi in dolor dignissim, id faucibus augue rutrum. Aenean vitae blandit neque, eu euismod dui. Nulla gravida non lectus ac sollicitudin. Mauris pretium dictum hendrerit. Sed et purus non tortor eleifend venenatis nec ac magna. Nam ipsum lectus, euismod ac rhoncus et, varius eu velit. Aenean arcu enim, sagittis non posuere ac, condimentum sit amet lorem.
+      </p>
+      <p>
+        Aliquam congue volutpat ante vitae cursus. Mauris aliquam at tellus eget iaculis. Pellentesque egestas eu augue sit amet semper. Aenean auctor, lectus ullamcorper mollis tempor, justo turpis lacinia risus, eget hendrerit ex augue nec libero. Vestibulum feugiat sem leo, nec posuere massa aliquet in. Nunc ornare consequat varius. Curabitur tortor metus, viverra non dui eget, vulputate tempus mauris. Suspendisse potenti. Vivamus quam felis, vulputate sed orci et, lobortis posuere lacus. Donec pulvinar, odio et sodales tempor, enim nulla condimentum neque, in malesuada tellus diam quis nibh. Phasellus et turpis erat. Curabitur dignissim feugiat eros scelerisque interdum.
+      </p>
+    </section>
+
+    <nav>
+      nav
+      <ul>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+        <li>option</li>
+      </li>
+    </nav>
+
+    <footer>
+      footer
+    </footer>
+
+  </body>
+</html>
