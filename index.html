@@ -8,30 +8,33 @@
         -webkit-box-sizing: border-box;
       }
       body {
+        position: relative;
+        min-height: calc(100vh - 100px - 20px);
         margin: 0;
         color: #999;
         font-size: 16px;
         font-family: courier;
       }
-      header,nav,section,footer {
-        padding: 1em;
+      header,nav,article,footer {
+        padding: 20px;
         background: #eee;
       }
       header {
-        margin: 0 0 1em;
+        height: 50px;
+        margin: 0 0 20px;
       }
       /* nav */
       nav {
+        position: relative;
         margin: 1px 0;
-        -webkit-transition: all 300ms;
       }
       @media (max-width: 767px) {
         nav {
           position: absolute;
-          top: 4em;
-          left: 1em;
-          right: 1em;
-          width: calc(100% - 2em);
+          top: 70px;
+          left: 20px;
+          right: 20px;
+          height: 50px;
         }
         nav ul {
           display: none
@@ -39,35 +42,64 @@
       }
       @media (min-width: 768px) {
         nav {
-          position: absolute;
-          top: 4em;
-          left: 0;
-          right: auto;
-          width: 200px;
+          z-index: 2;
+          float: left;
+          width: 250px;
+          left: -690px;
+          left: calc(-100% + 250px + 20px + 20px)
         }
       }
 
       /* main content */
+      .container {
+        width: 960px;
+        width: calc(100%);
+        margin: 0 auto;
+        margin: calc(0px);
+      }
       section {
         position: relative;
+      }
+      article {
         background: #ddd;
-        -webkit-transition: all 300ms;
       }
       @media (max-width: 767px) {
         section {
           left: 0;
-          margin-top: 5em;
+          margin-top: 90px;
         }
       }
       @media (min-width: 768px) {
         section {
-          left: 220px;
+          left: 270px;
+          left: calc(250px + 20px);
+          width: 710px;
+          width: calc(100% - 250px - 20px);
+          padding: 0 20px;
+          float: left;
+        }
+        article{
+          max-width: 710px;
+          margin: 0 auto;
         }
       }
       /* footer */
       footer {
-        margin: 1em 0 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        min-height: 500px;
+        min-height: calc(100px);
+        clear: both;
+        margin: 20px 0 0;
         background: #ccc;
+      }
+      /* misc */
+      .clear {
+        clear: both;
+        height: 0;
+        overflow: none;
       }
     </style>
   </head>
@@ -77,40 +109,49 @@
       header
     </header>
 
-    <section>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac odio sit amet massa cursus iaculis vel at turpis. Nunc sodales nisl dictum, porta tellus ut, porttitor nibh. Aenean semper cursus magna, porta dapibus sem dapibus a. Nulla eu placerat augue. Maecenas eget interdum sapien. Cras tempus augue tortor, sed cursus orci vehicula nec. Proin tempor mi in dolor dignissim, id faucibus augue rutrum. Aenean vitae blandit neque, eu euismod dui. Nulla gravida non lectus ac sollicitudin. Mauris pretium dictum hendrerit. Sed et purus non tortor eleifend venenatis nec ac magna. Nam ipsum lectus, euismod ac rhoncus et, varius eu velit. Aenean arcu enim, sagittis non posuere ac, condimentum sit amet lorem.
-      </p>
-      <p>
-        Aliquam congue volutpat ante vitae cursus. Mauris aliquam at tellus eget iaculis. Pellentesque egestas eu augue sit amet semper. Aenean auctor, lectus ullamcorper mollis tempor, justo turpis lacinia risus, eget hendrerit ex augue nec libero. Vestibulum feugiat sem leo, nec posuere massa aliquet in. Nunc ornare consequat varius. Curabitur tortor metus, viverra non dui eget, vulputate tempus mauris. Suspendisse potenti. Vivamus quam felis, vulputate sed orci et, lobortis posuere lacus. Donec pulvinar, odio et sodales tempor, enim nulla condimentum neque, in malesuada tellus diam quis nibh. Phasellus et turpis erat. Curabitur dignissim feugiat eros scelerisque interdum.
-      </p>
-    </section>
+    <div class="container">
 
-    <nav>
-      nav
-      <ul>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-        <li>option</li>
-      </li>
-    </nav>
+      <section>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac odio sit amet massa   cursus iaculis vel at   turpis. Nunc sodales nisl dictum, porta tellus ut, porttitor nibh. Aenean   semper cursus magna, porta dapibus sem   dapibus a. Nulla eu placerat augue. Maecenas eget interdum   sapien. Cras tempus augue tortor, sed cursus orci vehicula   nec. Proin tempor mi in dolor   dignissim, id faucibus augue rutrum. Aenean vitae blandit neque, eu euismod dui. Nulla   gravida   non lectus ac sollicitudin. Mauris pretium dictum hendrerit. Sed et purus non tortor eleifend   venenatis nec   ac magna. Nam ipsum lectus, euismod ac rhoncus et, varius eu velit. Aenean arcu   enim, sagittis non posuere ac,   condimentum sit amet lorem.
+          </p>
+          <p>
+            Aliquam congue volutpat ante vitae cursus. Mauris aliquam at tellus eget iaculis. Pellentesque   egestas eu augue sit   amet semper. Aenean auctor, lectus ullamcorper mollis tempor, justo turpis   lacinia risus, eget hendrerit ex augue nec   libero. Vestibulum feugiat sem leo, nec posuere massa   aliquet in. Nunc ornare consequat varius. Curabitur tortor   metus, viverra non dui eget, vulputate   tempus mauris. Suspendisse potenti. Vivamus quam felis, vulputate sed orci et,   lobortis posuere   lacus. Donec pulvinar, odio et sodales tempor, enim nulla condimentum neque, in malesuada tellus     diam quis nibh. Phasellus et turpis erat. Curabitur dignissim feugiat eros scelerisque interdum.
+          </p>
+        </article>
+      </section>
+  
+      <nav>
+        nav
+        <ul>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+          <li>option</li>
+        </li>
+      </nav>
+
+      <div class="clear"></div>
+
+    </div>
 
     <footer>
       footer
