@@ -6,14 +6,29 @@
     <style>
       * {
         -webkit-box-sizing: border-box;
-      }
-      body {
-        position: relative;
-        min-height: calc(100vh - 100px - 20px);
-        margin: 0;
-        color: #999;
         font-size: 16px;
         font-family: courier;
+      }
+      /*
+        base-width: 960px
+        gutter: 20px
+        nav-width: 250px
+
+        * The HTML is in roughly the same order as the existing site, ie: content, then navigation - assuming this is for SEO;
+        * Both mobile and large media queries are abstracted from the base CSS
+        * Nav jumps to above content for mobile (becomes absolute), hides content, content becomes full width
+        * Footer sticks to bottom for browsers that can use calc() (IE9+), appears under content with a large min height for the rest
+        * Nav sticks to left for browsers that can use calc() (IE9+) , sticks to left of content for the rest
+        * All calc() dimensions should have a fallback for older browsers
+        * .container is only used to keep the design working for older browsers (eg, those that don't support calc()) - was hoping to build without these constraining containers slowing down rendering - but hey, IE.
+      */
+
+      body {
+        position: relative;
+        min-height: 0;
+        min-height: calc(100vh - 100px - 20px);  /* fixes the footer to the bottom of the page - need to test in iOS (which doesn't like vh units) */
+        margin: 0;
+        color: #999;
       }
       header,nav,article,footer {
         padding: 20px;
@@ -28,7 +43,7 @@
         position: relative;
         margin: 1px 0;
       }
-      @media (max-width: 767px) {
+      @media (max-width: 767px) { /* small viewport */
         nav {
           position: absolute;
           top: 70px;
@@ -40,20 +55,20 @@
           display: none
         }
       }
-      @media (min-width: 768px) {
+      @media (min-width: 768px) { /* large viewport */
         nav {
           z-index: 2;
           float: left;
           width: 250px;
           left: -690px;
-          left: calc(-100% + 250px + 20px + 20px)
+          left: calc(-100% + 250px + 20px + 20px);
         }
       }
 
       /* main content */
       .container {
-        width: 960px;
-        width: calc(100%);
+        max-width: 960px;
+        max-width: calc(100%);
         margin: 0 auto;
         margin: calc(0px);
       }
@@ -63,13 +78,13 @@
       article {
         background: #ddd;
       }
-      @media (max-width: 767px) {
+      @media (max-width: 767px) { /* small viewport */
         section {
           left: 0;
           margin-top: 90px;
         }
       }
-      @media (min-width: 768px) {
+      @media (min-width: 768px) { /* large viewport */
         section {
           left: 270px;
           left: calc(250px + 20px);
@@ -89,7 +104,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        min-height: 500px;
+        min-height: 800px;  /* if the browser doesn't support calc(), it'll appear directly under content, so make it tall to reduce the chance of ugly white space under the footer */
         min-height: calc(100px);
         clear: both;
         margin: 20px 0 0;
