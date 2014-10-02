@@ -6,8 +6,8 @@
     <style>
       * {
         -webkit-box-sizing: border-box;
-        font-size: 16px;
-        font-family: courier;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
       }
       /*
         base-width: 960px
@@ -29,6 +29,8 @@
         min-height: calc(100vh - 100px - 20px);  /* fixes the footer to the bottom of the page - need to test in iOS (which doesn't like vh units) */
         margin: 0;
         color: #999;
+        font-size: 16px;
+        font-family: courier;
       }
       header,nav,article,footer {
         padding: 20px;
